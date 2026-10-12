@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Government Agricultural Intelligence & Planning Portal | Maha Inventory</title>
+  <meta name="description" content="Statewide agricultural inventory intelligence, 36-district stock monitoring, and predictive shortage/surplus forecasting for the Government of Maharashtra.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="government.css?v=10">
+</head>
+<body class="gov-theme">
+  <!-- Saffron & Emerald Ambient Glow Orbs -->
+  <div class="ambient-mesh" aria-hidden="true">
+    <div class="ambient-orb gov-orb-saffron"></div>
+    <div class="ambient-orb gov-orb-green"></div>
+  </div>
+  <div class="tech-grid" aria-hidden="true"></div>
+
+  <div class="app-wrapper">
+    <!-- Executive Government Header -->
+    <header class="gov-header">
+      <div class="gov-header-left">
+        <a href="index.html" class="btn-back-gateway" title="Return to Maha Inventory Gateway">
+          <span>←</span> Gateway
+        </a>
+        <a href="warehouse.html" class="btn-back-gateway" style="border-color: rgba(16,185,129,0.3); color:#6ee7b7;" title="Switch to Warehouse Operator Portal">
+          <span>🏢</span> Warehouse Terminal
+        </a>
+        <div class="gov-emblem-wrap">
+          <span class="gov-seal">🏛️</span>
+        </div>
+        <div class="gov-title-group">
+          <div class="gov-title-row">
+            <span class="gov-badge-seal">MH-STATE AGRI HQ</span>
+            <h1 class="gov-main-title">State Agricultural Intelligence & Forecasting Portal</h1>
+            <span class="gov-live-tag">● 36 Districts Live</span>
+          </div>
+          <p class="gov-sub-title">महाराष्ट्र राज्य कृषी गुप्तचर, साठा नियंत्रण व धान्य नियोजन प्राधिकरण • पुणे मुख्यालय</p>
+        </div>
+      </div>
+
+      <div class="gov-header-right">
+        <!-- Live Statewide Freshness Telemetry -->
+        <div class="gov-telemetry-chip">
+          <span class="tele-icon pulse-glow">⚡</span>
+          <div>
+            <span class="tele-val" id="dispFreshness">98.7%</span>
+            <span class="tele-lbl">Ledger Freshness (&lt;6h)</span>
+          </div>
+        </div>
+
+        <div class="gov-telemetry-chip">
+          <span class="tele-icon">🏢</span>
+          <div>
+            <span class="tele-val" id="dispTotalGodowns">248 Godowns</span>
+            <span class="tele-lbl">Active Roster</span>
+          </div>
+        </div>
+
+        <!-- Executive Master 3-Dot (⋮) Operations Dropdown Menu -->
+        <div class="gov-master-menu-wrap">
+          <button class="btn-gov-master-dots" id="btnMasterMenu" title="Executive State Actions & Operations">
+            <span class="three-dots">⋮</span> Actions ▾
+          </button>
+          <div class="gov-dropdown-menu" id="masterDropdown" aria-hidden="true">
+            <div class="dropdown-header">STATE COMMAND TOOLS</div>
+            <button class="dropdown-item" id="menuItemDirective">
+              <span class="d-icon">📢</span> Issue Planning Directive
+            </button>
+            <button class="dropdown-item" id="menuItemReallocate">
+              <span class="d-icon">🔄</span> Strategic Buffer Transfer
+            </button>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item" id="menuItemExportCsv">
+              <span class="d-icon">📥</span> Export 36-District CSV
+            </button>
+            <button class="dropdown-item" id="menuItemPrintDossier">
+              <span class="d-icon">📄</span> Export Official Dossier (PDF)
+            </button>
+          </div>
+        </div>
+
+        <!-- Official Profile Card -->
+        <div class="gov-official-card">
+          <div class="official-avatar">RD</div>
+          <div class="official-meta">
+            <span class="official-name" id="govOfficerName">Dr. Rajesh Deshmukh, IAS</span>
+            <span class="official-role" id="govOfficerRole">Director of Agricultural Marketing</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- LIVE TELEMETRY MARQUEE TICKER (Real-Time State Broadcast) -->
+    <div class="gov-live-ticker-bar" aria-label="Real-time State Agricultural Intelligence Ticker">
+      <div class="ticker-badge">
+        <span class="ticker-dot"></span> LIVE STATE TELEMETRY
+      </div>
+      <div class="ticker-track-wrap">
+        <div class="ticker-track">
+          <span class="ticker-item">⚡ <strong>Pimpalgaon Baswant APMC:</strong> +1,400 Qtl Nashik Red Onion verified inward receipt at Godown #1</span>
+          <span class="ticker-item">🚚 <strong>State Transit Corridor:</strong> 5,000 MT Tur Dal buffer dispatched to Solapur Deficit Hub</span>
+          <span class="ticker-item">🌾 <strong>Latur & Nanded:</strong> Soybean MSP Price Support Scheme (PSS) procurement active at ₹4,892/Qtl</span>
+          <span class="ticker-item">🏛️ <strong>DAO Directive #DIR-MH-2026-08:</strong> All 248 godown electronic weighbridges certified &lt;0.05% margin</span>
+          <span class="ticker-item">🔮 <strong>AI Predictive Model:</strong> Kharif harvest yield forecast 91.4% confidence statewide</span>
+          <span class="ticker-item">⚡ <strong>Pimpalgaon Baswant APMC:</strong> +1,400 Qtl Nashik Red Onion verified inward receipt at Godown #1</span>
+          <span class="ticker-item">🚚 <strong>State Transit Corridor:</strong> 5,000 MT Tur Dal buffer dispatched to Solapur Deficit Hub</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXECUTIVE VIEW NAV TABS (Clean, Uncluttered Module Switcher) -->
+    <div class="gov-nav-strip">
+      <div class="gov-tabs-nav" role="tablist">
+        <button class="gov-nav-tab active" data-target="view-command">
+          <span class="tab-icon">🏢</span> 36-District Ledger & Command
+          <span class="tab-badge">Primary</span>
+        </button>
+        <button class="gov-nav-tab" data-target="view-directives">
+          <span class="tab-icon">📢</span> Directives Broadcast Studio
+          <span class="tab-badge-amber">Broadcast</span>
+        </button>
+        <button class="gov-nav-tab" data-target="view-reallocate">
+          <span class="tab-icon">🔄</span> Buffer Re-Allocation Studio
+          <span class="tab-badge-green">Corridor</span>
+        </button>
+        <button class="gov-nav-tab" data-target="view-dossier">
+          <span class="tab-icon">📍</span> District Dossier Inspector
+          <span class="tab-badge">Surveillance</span>
+        </button>
+        <button class="gov-nav-tab" data-target="view-forecast">
+          <span class="tab-icon">🔮</span> AI Shortage / Surplus Models
+          <span class="tab-badge-accent">Step 9</span>
+        </button>
+        <button class="gov-nav-tab" data-target="view-msp">
+          <span class="tab-icon">⚖️</span> MSP Market Parity Monitor
+          <span class="tab-badge-green">18 Centers</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="gov-main">
+      <!-- ====================================================================
+           MODULE 1: 36-DISTRICT COMMAND & VISUAL SHOWCASE (DEFAULT CLEAN VIEW)
+           ==================================================================== -->
+      <div class="gov-tab-pane active" id="view-command">
+        <!-- Command Operations Showcase & High-Level State KPI Telemetry -->
+        <section class="gov-overview-grid">
+          <!-- Left: Command Operations Visual Gallery Showcase (4 Authentic Work Photos) -->
+          <div class="gov-showcase-card">
+            <div class="gov-gallery-hero">
+              <img 
+                id="govHeroImg" 
+                src="images/gov_command_center.jpg" 
+                alt="Maharashtra State Agricultural Intelligence Command Center in Pune" 
+                class="gov-active-img"
+              >
+              <div class="gov-caption-overlay">
+                <span class="gov-caption-badge" id="govGalleryBadge">STATE COMMAND CENTER</span>
+                <h3 id="govGalleryTitle">Maharashtra Agricultural Intelligence Command Center (MSAICC)</h3>
+                <p id="govGalleryDesc">Central operations room monitoring statewide GIS district inventory heatmaps, stock arrival velocity, and predictive models.</p>
+              </div>
+            </div>
+
+            <!-- Thumbnail Strip (4 Work Photos) -->
+            <div class="gov-thumbs four-thumbs">
+              <button class="gov-thumb-btn active" data-img="images/gov_command_center.jpg" data-badge="STATE COMMAND CENTER" data-title="Maharashtra Agricultural Intelligence Command Center (MSAICC)" data-desc="Central operations room monitoring statewide GIS district inventory heatmaps, stock arrival velocity, and predictive models.">
+                <img src="images/gov_command_center.jpg" alt="Command Center">
+                <span>MSAICC Headquarters</span>
+              </button>
+              <button class="gov-thumb-btn" data-img="images/gov_field_audit.jpg" data-badge="DISTRICT FIELD AUDIT" data-title="District Agricultural Officer (DAO) Godown Audit" data-desc="On-site digital verification of wholesale grain stacks, electronic weighbridge calibration, and ledger integrity.">
+                <img src="images/gov_field_audit.jpg" alt="DAO Field Audit">
+                <span>DAO Godown Audits</span>
+              </button>
+              <button class="gov-thumb-btn" data-img="images/gov_mandi_inspection.jpg" data-badge="APMC MANDI VIGILANCE" data-title="Agricultural Marketing Board & MSP Mandi Inspection" data-desc="On-site electronic sampling, MSP rate compliance, and farmer purchase receipts oversight across Maharashtra market yards.">
+                <img src="images/gov_mandi_inspection.jpg" alt="APMC Mandi Inspection">
+                <span>Mandi & MSP Inspection</span>
+              </button>
+              <button class="gov-thumb-btn" data-img="images/gov_policy_session.jpg" data-badge="POLICY & PLANNING" data-title="Inter-District Allocation & Gram Panchayat Taskforce" data-desc="Coordinating strategic buffer reserves and price stabilization directives with Gram Panchayats and FPOs.">
+                <img src="images/gov_policy_session.jpg" alt="Policy Session">
+                <span>Planning Taskforce</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Statewide Summary KPI Strip & Buffer Target Progress -->
+          <div class="gov-kpi-card">
+            <div class="gov-kpi-header">
+              <div>
+                <span class="kpi-eyebrow">MAHARASHTRA STATE RESERVE BALANCE</span>
+                <h3 class="kpi-title">Statewide Agricultural Stock Overview</h3>
+              </div>
+              <span class="gov-status-pill">● 36 Districts Active</span>
+            </div>
+
+            <!-- Large State Usable Stock Highlight -->
+            <div class="state-stock-hero">
+              <div class="stock-hero-val" id="dispStateStock">2,18,450 <small>MT</small></div>
+              <div class="stock-hero-sub">21,84,500 Quintals Usable Food & Cash Crop Reserves Across Monitored Godowns</div>
+
+              <!-- Strategic State Buffer Reserve Gauge -->
+              <div class="buffer-gauge-wrap">
+                <div class="gauge-labels">
+                  <span class="gauge-target">Statutory Buffer Target: <strong>2,50,000 MT</strong></span>
+                  <span class="gauge-pct" id="dispBufferPct">87.4% Secured</span>
+                </div>
+                <div class="gauge-bar-track">
+                  <div class="gauge-bar-fill" id="dispBufferFill" style="width: 87.4%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2x2 State Velocity Grid -->
+            <div class="state-velocity-grid">
+              <div class="velocity-box">
+                <span class="v-lbl">⚡ Today's Farmer Purchases</span>
+                <span class="v-val text-green">+4,210 <small>MT</small></span>
+                <span class="v-sub">Inward arrivals across 248 godowns</span>
+              </div>
+              <div class="velocity-box">
+                <span class="v-lbl">🚚 Today's Dispatches & Sales</span>
+                <span class="v-val text-orange">-3,680 <small>MT</small></span>
+                <span class="v-sub">APMC Mandis & Inter-district transit</span>
+              </div>
+              <div class="velocity-box">
+                <span class="v-lbl">⚠️ Statewide Spoilage Rate</span>
+                <span class="v-val text-green">1.4% <small>Normal</small></span>
+                <span class="v-sub">Below 2.0% safety threshold</span>
+              </div>
+              <div class="velocity-box">
+                <span class="v-lbl">📍 Monitored Jurisdiction</span>
+                <span class="v-val text-saffron">358 <small>Talukas</small></span>
+                <span class="v-sub">100% Taluka Coverage</span>
+              </div>
+            </div>
+
+            <!-- Quick Actions Toolbar -->
+            <div class="gov-quick-actions">
+              <button type="button" class="btn-gov-primary" id="btnOpenAdvisoryModal">
+                <span>📢</span> Issue Directive
+              </button>
+              <button type="button" class="btn-gov-accent" id="btnOpenReallocateModal">
+                <span>🔄</span> Buffer Transfer
+              </button>
+              <button type="button" class="btn-gov-secondary" id="btnPrintStateReport" title="Print or save PDF Dossier">
+                <span>📄</span> Export PDF
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- DISTRICT-WISE AGRICULTURAL INTELLIGENCE HEATMAP & LEDGER (Step 8) -->
+        <section class="district-ledger-section">
+          <div class="table-card">
+            <div class="table-header-toolbar">
+              <div>
+                <div class="section-tag" style="color:#fbbf24;">STATE INVENTORY OVERSIGHT</div>
+                <h3 class="table-title">District-Wise Aggregated Inventory & Freshness Ledger</h3>
+                <p class="table-subtitle">Monitored across participating private godowns in Maharashtra. Click any row or the 3-dot (⋮) menu for district operations.</p>
+              </div>
+
+              <!-- Division & Search Filter Toolbar & CSV Export -->
+              <div class="gov-filters-row">
+                <input 
+                  type="text" 
+                  id="searchDistrictInput" 
+                  class="gov-search-input" 
+                  placeholder="🔍 Search District, Division or Crop..."
+                >
+
+                <div class="filter-pills">
+                  <button class="dist-filter-pill active" data-div="all">All Maharashtra</button>
+                  <button class="dist-filter-pill" data-div="Nashik">Nashik</button>
+                  <button class="dist-filter-pill" data-div="Pune">Pune</button>
+                  <button class="dist-filter-pill" data-div="Marathwada">Marathwada</button>
+                  <button class="dist-filter-pill" data-div="Vidarbha">Vidarbha</button>
+                </div>
+
+                <button type="button" class="btn-gov-secondary" id="btnExportCsv" style="height: 42px; font-size: 0.8rem;">
+                  <span>📥</span> CSV
+                </button>
+              </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+              <table class="gov-data-table" id="govDistrictsTable">
+                <thead>
+                  <tr>
+                    <th>District / Talukas</th>
+                    <th>Division</th>
+                    <th>Active Godowns</th>
+                    <th>Stored Balance (MT)</th>
+                    <th>Leading Commodity</th>
+                    <th>7-Day Velocity</th>
+                    <th>Data Freshness</th>
+                    <th>Forecast Status</th>
+                    <th>Assigned DAO Officer</th>
+                    <th style="text-align: center; width: 60px;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="districtsTableBody">
+                  <!-- Populated dynamically by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ====================================================================
+           MODULE 2: PREDICTIVE SHORTAGE & SURPLUS FORECASTING ENGINE (STEP 9)
+           ==================================================================== -->
+      <div class="gov-tab-pane" id="view-forecast">
+        <section class="forecast-section">
+          <div class="section-header-row">
+            <div>
+              <div class="section-tag" style="color:#fbbf24;">AI AGRICULTURAL INTELLIGENCE ENGINE (STEP 9)</div>
+              <h2 class="section-title">Regional Demand & Shortage/Surplus Forecasts</h2>
+              <p class="section-subtitle">
+                Calculated using 3-season moving averages, historical inward velocity, and seasonal consumption patterns. 
+                Estimates assist local coordination through Gram Panchayats and FPOs.
+              </p>
+            </div>
+            <span class="forecast-model-badge">🔮 Model: MH-Predict v2.4 • 91.4% Avg Confidence</span>
+          </div>
+
+          <div class="forecast-cards-grid">
+            <!-- Card 1: Nashik Surplus -->
+            <div class="forecast-card surplus-card">
+              <div class="f-card-header">
+                <span class="f-division">NASHIK DIVISION (Niphad, Lasalgaon)</span>
+                <span class="f-risk-badge surplus">SURPLUS +14.2%</span>
+              </div>
+              <h3 class="f-crop-title">Nashik Red Onion (नाशिक लाल कांदा)</h3>
+              <div class="f-metrics-row">
+                <div>
+                  <span class="fm-lbl">Stored Volume</span>
+                  <span class="fm-val">78,500 MT</span>
+                </div>
+                <div>
+                  <span class="fm-lbl">Confidence</span>
+                  <span class="fm-val">94%</span>
+                </div>
+                <div>
+                  <span class="fm-lbl">Daily Arrival</span>
+                  <span class="fm-val text-green">+1,850 MT</span>
+                </div>
+              </div>
+              <p class="f-desc">
+                Strong harvesting yields across Niphad and Dindori. Local APMC holding capacity near 85%. Risk of price drop if outflow slows.
+              </p>
+              <div class="f-action-box">
+                <strong>State Planning Directive:</strong>
+                <span>Authorizing subsidized inter-district transport to Solapur and Konkan deficit zones.</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Marathwada / Solapur Shortage Risk -->
+            <div class="forecast-card shortage-card">
+              <div class="f-card-header">
+                <span class="f-division">SOLAPUR & OSMANABAD DIVISION</span>
+                <span class="f-risk-badge shortage">SHORTAGE RISK -18.0%</span>
+              </div>
+              <h3 class="f-crop-title">Tur / Arhar Dal (तूर डाळ)</h3>
+              <div class="f-metrics-row">
+                <div>
+                  <span class="fm-lbl">Stored Volume</span>
+                  <span class="fm-val">13,150 MT</span>
+                </div>
+                <div>
+                  <span class="fm-lbl">Confidence</span>
+                  <span class="fm-val">88%</span>
+                </div>
+                <div>
+                  <span class="fm-lbl">Buffer Gap</span>
+                  <span class="fm-val text-red">-4,850 MT</span>
+                </div>
+              </div>
+              <p class="f-desc">
+                Storage buffer depleted by recent inter-state dispatches. Local retail reserves under 12 days supply.
+              </p>
+              <div class="f-action-box alert">
+                <strong>State Planning Directive:</strong>
+                <span>Issued Directive #DIR-MH-2026-08: Transferring 5,000 MT Tur Dal from Latur & Nashik vaults.</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Vidarbha Stable Reserve -->
+            <div class="forecast-card stable-card">
+              <div class="f-card-header">
+                <span class="f-division">VIDARBHA DIVISION (Nagpur, Yavatmal)</span>
+                <span class="f-risk-badge stable">EQUILIBRIUM STABLE</span>
+              </div>
+              <h3 class="f-crop-title">Yellow Soybean (सोयाबीन) & Cotton</h3>
+              <div class="f-metrics-row">
+                <div>
+                  <span class="fm-lbl">Stored Volume</span>
+                  <span class="fm-val">62,300 MT</span>
+                </div>
+                <div>
+                  <span class="fm-lbl">Confidence</span>
+                  <span class="fm-val">91%</span>
+                </div>
+                <div>
+                  <span class="fm-lbl">FPO Procurement</span>
+                  <span class="fm-val text-green">On Schedule</span>
+                </div>
+              </div>
+              <p class="f-desc">
+                Steady intake from 42 farmer producer organizations. Moisture content certified &lt; 10.5%. Stable retail buffer.
+              </p>
+              <div class="f-action-box">
+                <strong>State Planning Directive:</strong>
+                <span>Normal operations. Retaining strategic state safety reserve.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ====================================================================
+           MODULE 3: MSP PRICE PARITY & MANDI VIGILANCE MONITOR
+           ==================================================================== -->
+      <div class="gov-tab-pane" id="view-msp">
+        <section class="msp-monitor-section">
+          <div class="table-card">
+            <div class="table-header-toolbar">
+              <div>
+                <div class="section-tag" style="color:#10b981;">PRICE STABILIZATION & MARKET VIGILANCE</div>
+                <h3 class="table-title">Minimum Support Price (MSP) vs Mandi Market Parity Monitor</h3>
+                <p class="table-subtitle">Ensures fair remuneration to farmers and early intervention before distress sales occur.</p>
+              </div>
+              <span class="gov-badge-seal" style="border-color: rgba(16,185,129,0.4); color: #34d399;">● 18 PSS Centers Active</span>
+            </div>
+
+            <div class="table-responsive">
+              <table class="gov-data-table" id="mspTable">
+                <thead>
+                  <tr>
+                    <th>Produce / Commodity</th>
+                    <th>Statutory MSP / Benchmark</th>
+                    <th>Current APMC Modal Price</th>
+                    <th>Parity Spread</th>
+                    <th>Market Status</th>
+                    <th>State Action & Policy Status</th>
+                  </tr>
+                </thead>
+                <tbody id="mspTableBody">
+                  <!-- Loaded dynamically by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ====================================================================
+           MODULE 2: PLANNING DIRECTIVES BROADCAST STUDIO & FEED
+           ==================================================================== -->
+      <div class="gov-tab-pane" id="view-directives">
+        <section class="directives-section">
+          <div class="section-header-row">
+            <div>
+              <div class="section-tag" style="color:#fbbf24;">STATE PLANNING TRANSMISSION (STEP 10)</div>
+              <h2 class="section-title">Official Agricultural Planning Directives Broadcast Center</h2>
+              <p class="section-subtitle">Real-time statutory advisories broadcasted to District Agricultural Officers, APMC Market Yards, and Farmer Producer Organizations.</p>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <span class="gov-status-pill" style="border-color:rgba(16,185,129,0.35); color:#34d399;">● 36 DAOs & 305 APMCs Connected</span>
+            </div>
+          </div>
+
+          <div class="directives-studio-grid">
+            <!-- Left: Interactive Directive Transmitter Studio -->
+            <div class="directives-transmitter-card">
+              <div class="transmitter-radar-header">
+                <div class="radar-antenna-box">
+                  <span>📡</span>
+                </div>
+                <div class="transmitter-title-block">
+                  <h3>Issue Official State Planning Directive</h3>
+                  <p>Broadcast binding or advisory supply-chain directives with priority allocation quotas.</p>
+                </div>
+              </div>
+
+              <!-- Quick Directive Preset Templates -->
+              <div class="directive-templates-strip">
+                <span class="tmpl-label">⚡ Quick Directive Templates (Click to Auto-Fill):</span>
+                <div class="tmpl-chips">
+                  <button type="button" class="tmpl-chip-btn" data-preset="onion">🧅 Onion Price Stabilization & Transit Subsidy</button>
+                  <button type="button" class="tmpl-chip-btn" data-preset="soybean">🌾 Soybean MSP Procurement Drive</button>
+                  <button type="button" class="tmpl-chip-btn" data-preset="tur">🍲 Tur Dal Strategic Buffer Mobilization</button>
+                  <button type="button" class="tmpl-chip-btn" data-preset="audit">🔍 Statewide Cold Vault Calibration Notice</button>
+                </div>
+              </div>
+
+              <!-- Transmitter Form -->
+              <form id="studioDirectiveForm">
+                <div class="form-group">
+                  <label class="wh-label" for="studioDirTitle">Directive Title / विषय *</label>
+                  <input 
+                    type="text" 
+                    id="studioDirTitle" 
+                    class="wh-input" 
+                    placeholder="e.g. Nashik Red Onion Buffer Transfer to Solapur & Konkan Deficit Zones" 
+                    required
+                  >
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+                  <div class="form-group" style="margin-bottom: 0;">
+                    <label class="wh-label" for="studioDirDivision">Target Administrative Division / विभाग *</label>
+                    <select id="studioDirDivision" class="wh-select">
+                      <option value="Statewide All Divisions">Statewide All 36 Districts</option>
+                      <option value="Nashik & Ahmednagar Division">Nashik & Ahmednagar Division</option>
+                      <option value="Pune & Western Maharashtra">Pune & Western Maharashtra</option>
+                      <option value="Solapur & Marathwada Division">Solapur & Marathwada Division</option>
+                      <option value="Vidarbha & Nagpur Division">Vidarbha & Nagpur Division</option>
+                      <option value="Konkan & Coastal Ports">Konkan & Coastal Ports</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group" style="margin-bottom: 0;">
+                    <label class="wh-label" for="studioDirPriority">Priority Enforcement Level *</label>
+                    <select id="studioDirPriority" class="wh-select">
+                      <option value="HIGH">HIGH (Immediate Buffer Action Required)</option>
+                      <option value="MEDIUM" selected>MEDIUM (Standard Strategic Advisory)</option>
+                      <option value="LOW">LOW (Informational Market Brief)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="wh-label" for="studioDirMessage">Directive Instructions & Allocation Quotas *</label>
+                  <textarea 
+                    id="studioDirMessage" 
+                    class="wh-input" 
+                    rows="4" 
+                    style="height: 105px; padding: 10px 14px; resize: vertical;" 
+                    placeholder="Detail the mandatory stock movements, godown storage incentives, or APMC modal price interventions..."
+                    required
+                  ></textarea>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+                  <span style="font-size:0.75rem; color:var(--text-muted);">🔒 Signed by Dr. Rajesh Deshmukh, IAS • GovNet Encrypted</span>
+                  <button type="submit" class="btn-gov-primary" style="height: 48px; padding: 0 2rem;">
+                    <span>📡</span> Broadcast Directive Now
+                  </button>
+                </div>
+              </form>
+
+              <!-- Telemetry HUD Footer -->
+              <div class="broadcast-telemetry-hud">
+                <div class="b-hud-item">
+                  <span class="b-hud-lbl">Broadcast Reach</span>
+                  <span class="b-hud-val">36 Districts</span>
+                </div>
+                <div class="b-hud-item">
+                  <span class="b-hud-lbl">Delivery Latency</span>
+                  <span class="b-hud-val" style="color:#fbbf24;">&lt; 0.4s</span>
+                </div>
+                <div class="b-hud-item">
+                  <span class="b-hud-lbl">DAO Acknowledgment</span>
+                  <span class="b-hud-val">98.4%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Real-Time Broadcast Stream Feed -->
+            <div class="directives-feed-card">
+              <div class="table-header-toolbar" style="margin-bottom: 1rem;">
+                <div>
+                  <h3 class="table-title" style="font-size: 1.15rem;">Live Broadcast Transmission Feed</h3>
+                  <p class="table-subtitle">Chronological ledger of active government advisories.</p>
+                </div>
+                <span class="gov-badge-seal" id="activeDirectiveCountBadge">2 Active Directives</span>
+              </div>
+
+              <div class="directives-list" id="directivesList" style="max-height: 520px; overflow-y: auto; padding-right: 4px;">
+                <!-- Populated dynamically by JS -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ====================================================================
+           MODULE 3: STRATEGIC BUFFER STOCK RE-ALLOCATION STUDIO (STEP 9)
+           ==================================================================== -->
+      <div class="gov-tab-pane" id="view-reallocate">
+        <section class="reallocate-section">
+          <div class="section-header-row">
+            <div>
+              <div class="section-tag" style="color:#10b981;">INTER-DISTRICT BUFFER MOBILIZATION (STEP 9)</div>
+              <h2 class="section-title">Strategic Buffer Stock Re-Allocation Studio</h2>
+              <p class="section-subtitle">Dynamically transfer buffer stocks from surplus warehouse clusters to deficit regions to stabilize market supplies and prevent price spikes.</p>
+            </div>
+            <div class="corridor-tag">
+              <span>🚚</span> GREEN FREIGHT TRANSIT CORRIDOR ACTIVE
+            </div>
+          </div>
+
+          <div class="realloc-studio-wrap">
+            <!-- Animated Freight Corridor Transit Visualization -->
+            <div class="freight-corridor-hero">
+              <div class="corridor-header-row">
+                <div>
+                  <h3 style="font-size:1.25rem; font-weight:800; color:#fff; margin-bottom:0.2rem;">
+                    State Transit Corridor Simulation: Subsidized Inter-District Logistics
+                  </h3>
+                  <p style="font-size:0.82rem; color:var(--text-secondary);">
+                    Priority transit clearances and toll exemptions active across Maharashtra National & State Highways.
+                  </p>
+                </div>
+                <span class="gov-status-pill" style="color:#34d399;">● Real-Time Telemetry Route</span>
+              </div>
+
+              <!-- Visual Corridor Node Map -->
+              <div class="corridor-pipeline-diagram">
+                <!-- Left Source Node -->
+                <div class="corridor-node-card surplus">
+                  <span class="node-badge green">SURPLUS RESERVE HUB</span>
+                  <div class="node-district-name" id="corridorSourceDistrict">Nashik</div>
+                  <div class="node-stock-figure" id="corridorSourceStock">78,500 <small>MT</small></div>
+                  <div class="node-stock-sub">Nashik Division • +14.2% Inward Flow</div>
+                </div>
+
+                <!-- Animated Highway Road & Truck -->
+                <div class="corridor-transit-highway">
+                  <div class="transit-highway-road">
+                    <div class="transit-highway-stripes"></div>
+                  </div>
+                  <div class="transit-freight-lorry">
+                    <span>🚚</span>
+                    <span class="lorry-badge" id="corridorLorryCommodity">2,500 MT Buffer</span>
+                  </div>
+                  <span class="transit-highway-meta" id="corridorTransitMeta">
+                    Route: NH-60 via Pune Bypass • Subsidized Toll Corridor • 340 km • 6.5h ETA
+                  </span>
+                </div>
+
+                <!-- Right Deficit Node -->
+                <div class="corridor-node-card deficit">
+                  <span class="node-badge red">DEFICIT TARGET HUB</span>
+                  <div class="node-district-name" id="corridorTargetDistrict">Solapur</div>
+                  <div class="node-stock-figure" id="corridorTargetStock" style="color:#f87171;">13,150 <small>MT</small></div>
+                  <div class="node-stock-sub">Shortage Alert • -4,850 MT Buffer Gap</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Allocation Controls & Impact Calculator Grid -->
+            <div class="realloc-controls-grid">
+              <!-- Left: Dispatch Controller Form -->
+              <div class="realloc-form-card">
+                <h3 style="font-size:1.2rem; font-weight:800; color:#fff; margin-bottom:0.4rem;">
+                  Initiate Inter-District Buffer Transfer Order
+                </h3>
+                <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:1.25rem;">
+                  Select source surplus godowns and destination deficit district. Electronic waybills generated automatically.
+                </p>
+
+                <form id="studioReallocForm">
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+                    <div class="form-group" style="margin-bottom: 0;">
+                      <label class="wh-label" for="studioReallocFrom">Source District (Surplus Reserve) *</label>
+                      <select id="studioReallocFrom" class="wh-select">
+                        <option value="Nashik" selected>Nashik (78,500 MT Surplus)</option>
+                        <option value="Latur">Latur (38,400 MT Sufficient)</option>
+                        <option value="Ahmednagar">Ahmednagar (29,100 MT Balanced)</option>
+                        <option value="Nagpur">Nagpur (25,100 MT Stable)</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 0;">
+                      <label class="wh-label" for="studioReallocTo">Target Deficit District *</label>
+                      <select id="studioReallocTo" class="wh-select">
+                        <option value="Solapur" selected>Solapur (13,150 MT - Shortage Alert)</option>
+                        <option value="Pune">Pune (34,200 MT - Moderate Tight)</option>
+                        <option value="Kolhapur">Kolhapur (14,800 MT - Low Buffer)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+                    <div class="form-group" style="margin-bottom: 0;">
+                      <label class="wh-label" for="studioReallocCommodity">Commodity / Produce *</label>
+                      <select id="studioReallocCommodity" class="wh-select">
+                        <option value="Tur / Arhar Dal (तूर डाळ)">Tur / Arhar Dal (तूर डाळ)</option>
+                        <option value="Nashik Red Onion (नाशिक लाल कांदा)">Nashik Red Onion (नाशिक लाल कांदा)</option>
+                        <option value="Yellow Soybean (पिवळी सोयाबीन)">Yellow Soybean (पिवळी सोयाबीन)</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 0;">
+                      <label class="wh-label" for="studioReallocQty">Transfer Volume (MT) *</label>
+                      <input 
+                        type="number" 
+                        id="studioReallocQty" 
+                        class="wh-input" 
+                        value="2500" 
+                        min="100" 
+                        max="20000" 
+                        step="100" 
+                        required
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Quick Quota Chips -->
+                  <div style="margin-bottom: 1.25rem;">
+                    <span class="tmpl-label">⚡ Quick Volume Presets:</span>
+                    <div class="tmpl-chips">
+                      <button type="button" class="tmpl-chip-btn realloc-preset-btn" data-qty="1000">+1,000 MT (Small Buffer)</button>
+                      <button type="button" class="tmpl-chip-btn realloc-preset-btn" data-qty="2500">+2,500 MT (Standard Convoy)</button>
+                      <button type="button" class="tmpl-chip-btn realloc-preset-btn" data-qty="5000">+5,000 MT (Major Stabilization)</button>
+                      <button type="button" class="tmpl-chip-btn realloc-preset-btn" data-qty="10000">+10,000 MT (State Emergency)</button>
+                    </div>
+                  </div>
+
+                  <!-- Slider Control -->
+                  <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label class="wh-label" for="studioReallocSlider" style="display:flex; justify-content:space-between;">
+                      <span>Fine Quota Slider:</span>
+                      <strong id="sliderQtyDisplay" style="color:#fbbf24; font-family:var(--font-mono);">2,500 MT</strong>
+                    </label>
+                    <input 
+                      type="range" 
+                      id="studioReallocSlider" 
+                      min="100" 
+                      max="15000" 
+                      step="100" 
+                      value="2500" 
+                      style="width:100%; accent-color:#10b981; cursor:pointer;"
+                    >
+                  </div>
+
+                  <button type="submit" class="btn-gov-primary" style="width:100%; height:50px; font-size:1rem; background: linear-gradient(135deg, #059669 0%, #10b981 50%, #f59e0b 100%);">
+                    <span>🚀</span> Authorize & Dispatch Buffer Stock Convoy
+                  </button>
+                </form>
+              </div>
+
+              <!-- Right: Impact Telemetry & Toll-Free Pass Card -->
+              <div class="realloc-impact-card">
+                <div>
+                  <h3 class="impact-title">Dynamic Re-Allocation Impact Assessment</h3>
+                  <p class="impact-sub">Automated projection of regional buffer equilibrium post-transfer.</p>
+
+                  <div class="impact-stats-grid">
+                    <div class="impact-stat-box">
+                      <span class="impact-stat-lbl">Projected Source Reserve</span>
+                      <span class="impact-stat-val text-saffron" id="calcRemainingSurplus">76,000 MT</span>
+                    </div>
+                    <div class="impact-stat-box">
+                      <span class="impact-stat-lbl">Deficit Gap Alleviated</span>
+                      <span class="impact-stat-val text-green" id="calcDeficitReduction">+51.5%</span>
+                    </div>
+                    <div class="impact-stat-box">
+                      <span class="impact-stat-lbl">Required Heavy Trucks</span>
+                      <span class="impact-stat-val" id="calcTrucksRequired">125 Trucks</span>
+                    </div>
+                    <div class="impact-stat-box">
+                      <span class="impact-stat-lbl">Logistics Clearance</span>
+                      <span class="impact-stat-val text-green">PRIORITY-1</span>
+                    </div>
+                  </div>
+
+                  <div class="toll-free-pass-preview">
+                    <div class="pass-header">
+                      <span>🏛️ MAHA-TRANSIT GREEN CORRIDOR PASS</span>
+                      <span>VALIDATED</span>
+                    </div>
+                    <div class="pass-details">
+                      <strong>Transit Token:</strong> MHA-EXP-2026-9041 • Green Signal on toll plazas NH-60, NH-52. Emergency food security protocol Section 14 invoked.
+                    </div>
+                  </div>
+                </div>
+
+                <div style="font-size:0.75rem; color:var(--text-muted); margin-top:1rem; text-align:center;">
+                  Audited by Directorate of Agricultural Marketing • Real-time GPS Tracker Linked
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Inter-District Dispatches Ledger -->
+            <div class="table-card">
+              <div class="table-header-toolbar">
+                <div>
+                  <h3 class="table-title">Recent Strategic Buffer Transfers Ledger</h3>
+                  <p class="table-subtitle">Active convoys in transit under State Agricultural Directive.</p>
+                </div>
+                <span class="gov-badge-seal">Real-Time Transit Logs</span>
+              </div>
+
+              <div class="table-responsive">
+                <table class="gov-data-table">
+                  <thead>
+                    <tr>
+                      <th>Dispatch ID</th>
+                      <th>Origin (Surplus)</th>
+                      <th>Destination (Deficit)</th>
+                      <th>Commodity</th>
+                      <th>Quantity</th>
+                      <th>Transit Route</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="reallocTransitsTableBody">
+                    <tr>
+                      <td><span style="font-family:var(--font-mono); color:#fbbf24; font-weight:700;">#DISP-MH-9810</span></td>
+                      <td><strong>Nashik Godown Cluster</strong></td>
+                      <td><strong>Solapur Central Hub</strong></td>
+                      <td>Tur / Arhar Dal</td>
+                      <td><strong style="font-family:var(--font-mono); color:#34d399;">2,500 MT</strong></td>
+                      <td>NH-60 Green Corridor</td>
+                      <td><span class="msp-status-pill stable">🚚 In Transit (ETA 4h)</span></td>
+                    </tr>
+                    <tr>
+                      <td><span style="font-family:var(--font-mono); color:#fbbf24; font-weight:700;">#DISP-MH-9809</span></td>
+                      <td><strong>Latur Pulse Vaults</strong></td>
+                      <td><strong>Osmanabad Sub-Hub</strong></td>
+                      <td>Yellow Soybean</td>
+                      <td><strong style="font-family:var(--font-mono); color:#34d399;">1,200 MT</strong></td>
+                      <td>SH-14 Express Link</td>
+                      <td><span class="msp-status-pill stable">✓ Delivered & Stored</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ====================================================================
+           MODULE 4: DISTRICT INTELLIGENCE DOSSIER INSPECTOR
+           ==================================================================== -->
+      <div class="gov-tab-pane" id="view-dossier">
+        <section class="dossier-section">
+          <div class="section-header-row">
+            <div>
+              <div class="section-tag" style="color:#fbbf24;">DISTRICT INTELLIGENCE DOSSIER (STEP 8)</div>
+              <h2 class="section-title">District Stock Surveillance & Field Audit Dossier</h2>
+              <p class="section-subtitle">Deep-dive district audit inspection: godown capacities, cold vs dry vaults, lead produce dynamics, and direct DAO officer dispatch.</p>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <select id="studioDossierSelect" class="wh-select" style="min-width: 220px; font-weight:700;">
+                <option value="Nashik">Nashik (नाशिक)</option>
+                <option value="Pune">Pune (पुणे)</option>
+                <option value="Latur">Latur (लातूर)</option>
+                <option value="Solapur">Solapur (सोलापूर)</option>
+                <option value="Ahmednagar">Ahmednagar (अहिल्यानगर)</option>
+                <option value="Nagpur">Nagpur (नागपूर)</option>
+                <option value="Chhatrapati Sambhajinagar">Chhatrapati Sambhajinagar</option>
+                <option value="Amravati">Amravati (अमरावती)</option>
+                <option value="Jalgaon">Jalgaon (जळगाव)</option>
+                <option value="Kolhapur">Kolhapur (कोल्हापूर)</option>
+                <option value="Nanded">Nanded (नांदेड)</option>
+                <option value="Satara">Satara (सातारा)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="dossier-studio-wrap">
+            <!-- Quick District Switcher Chips Bar -->
+            <div class="dossier-quick-districts-bar" id="dossierQuickChips">
+              <button class="dossier-chip-btn active" data-dist="Nashik">🧅 Nashik</button>
+              <button class="dossier-chip-btn" data-dist="Solapur">🍲 Solapur</button>
+              <button class="dossier-chip-btn" data-dist="Pune">🍅 Pune</button>
+              <button class="dossier-chip-btn" data-dist="Latur">🌾 Latur</button>
+              <button class="dossier-chip-btn" data-dist="Nagpur">☁️ Nagpur</button>
+              <button class="dossier-chip-btn" data-dist="Ahmednagar">🌽 Ahmednagar</button>
+              <button class="dossier-chip-btn" data-dist="Kolhapur">🍚 Kolhapur</button>
+              <button class="dossier-chip-btn" data-dist="Chhatrapati Sambhajinagar">🌾 Sambhajinagar</button>
+              <button class="dossier-chip-btn" data-dist="Jalgaon">🍌 Jalgaon</button>
+              <button class="dossier-chip-btn" data-dist="Amravati">🍊 Amravati</button>
+            </div>
+
+            <!-- Main Dossier Inspector Workbench -->
+            <div class="dossier-inspector-workbench">
+              <div class="dossier-hero-header">
+                <div class="dossier-district-heading">
+                  <h2>
+                    <span>📍</span> 
+                    <span id="studioDossierTitle">Nashik District Dossier</span>
+                  </h2>
+                  <div class="dossier-badges-strip">
+                    <span class="gov-badge-seal" id="studioDossierDivisionBadge">Nashik Division</span>
+                    <span class="gov-badge-seal" id="studioDossierRiskBadge" style="color:#34d399; border-color:rgba(16,185,129,0.35);">● High Surplus Reserve</span>
+                    <span style="font-size:0.75rem; color:var(--text-muted);">Surveillance Code: DIS-MH-NSK-2026</span>
+                  </div>
+                </div>
+
+                <div style="display:flex; align-items:center; gap:0.75rem;">
+                  <button type="button" class="btn-gov-secondary" id="btnExportDossierPdf" style="height:42px;">
+                    <span>📄</span> Export District Brief
+                  </button>
+                </div>
+              </div>
+
+              <!-- Animated Metric Meters Grid -->
+              <div class="dossier-metrics-meters-grid">
+                <!-- Stored Stock -->
+                <div class="meter-card">
+                  <span class="meter-lbl">Total Stored Reserve</span>
+                  <span class="meter-val text-saffron" id="studioDossierStock">78,500 MT</span>
+                  <div class="meter-bar-track">
+                    <div class="meter-bar-fill saffron" id="studioDossierStockBar" style="width: 85%;"></div>
+                  </div>
+                  <span style="font-size:0.7rem; color:var(--text-muted); margin-top:4px; display:block;">7,85,000 Quintals in surveillance</span>
+                </div>
+
+                <!-- Active Godowns -->
+                <div class="meter-card">
+                  <span class="meter-lbl">Monitored Godowns</span>
+                  <span class="meter-val" id="studioDossierGodowns">38 Facilities</span>
+                  <div class="meter-bar-track">
+                    <div class="meter-bar-fill blue" style="width: 76%;"></div>
+                  </div>
+                  <span style="font-size:0.7rem; color:var(--text-muted); margin-top:4px; display:block;">15 Talukas 100% mapped</span>
+                </div>
+
+                <!-- Cold Storage Vaults -->
+                <div class="meter-card">
+                  <span class="meter-lbl">Cold Storage Vaults</span>
+                  <span class="meter-val text-green" id="studioDossierColdVal">24 Facilities</span>
+                  <div class="meter-bar-track">
+                    <div class="meter-bar-fill green" id="studioDossierColdBar" style="width: 63%;"></div>
+                  </div>
+                  <span style="font-size:0.7rem; color:#34d399; margin-top:4px; display:block;">63% Perishable Preservation</span>
+                </div>
+
+                <!-- Freshness Score -->
+                <div class="meter-card">
+                  <span class="meter-lbl">Freshness Quality Score</span>
+                  <span class="meter-val text-green" id="studioDossierFreshness">99.2%</span>
+                  <div class="meter-bar-track">
+                    <div class="meter-bar-fill green" style="width: 99%;"></div>
+                  </div>
+                  <span style="font-size:0.7rem; color:var(--text-muted); margin-top:4px; display:block;">Pristine Quality Condition</span>
+                </div>
+              </div>
+
+              <!-- Leading Crop & Dynamics Banner -->
+              <div class="dossier-detail-card" style="margin-bottom:1.25rem;">
+                <h4 style="font-size:0.92rem; color:#fff; margin-bottom:0.4rem; display:flex; align-items:center; gap:0.5rem;">
+                  <span>🌾</span> Leading Produce & Supply Velocity
+                </h4>
+                <p id="studioDossierLeadCrop" style="font-size:0.86rem; color:#cbd5e1; line-height:1.5;">
+                  Nashik Red Onion (नाशिक लाल कांदा) • High Inward Flow (+14.2% weekly surplus). APMC modal rates at ₹1,820 / Qtl. 15 Talukas submitting daily electronic receipts.
+                </p>
+              </div>
+
+              <!-- Assigned District Agricultural Officer (DAO) Direct Contact Card -->
+              <div class="dossier-dao-executive-card">
+                <div class="dao-profile-left">
+                  <div class="dao-avatar-seal">
+                    <span>🏛️</span>
+                  </div>
+                  <div class="dao-info-block">
+                    <h4 id="studioDaoName">Smt. Sunita Patil</h4>
+                    <p id="studioDaoRole">District Agricultural Officer (DAO) • Govt of Maharashtra • District HQ</p>
+                    <span style="font-size:0.75rem; color:#34d399;">● On Duty • Verified State Authority</span>
+                  </div>
+                </div>
+
+                <div class="dao-actions-right">
+                  <a id="studioDaoPhoneLink" href="tel:+912532578912" class="btn-gov-secondary" style="height:44px; text-decoration:none;">
+                    <span>📞</span> Call DAO Office
+                  </a>
+                  <button type="button" class="btn-gov-primary" id="btnStudioDispatchAudit" style="height:44px; padding:0 1.5rem;">
+                    <span>📋</span> Schedule On-Site Audit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- FLOATING CONTEXT MENU FOR DISTRICT TABLE 3-DOTS (⋮) -->
+    <div id="distContextMenu" class="dist-context-menu" aria-hidden="true">
+      <div class="context-menu-header" id="contextMenuTitle">District Actions</div>
+      <button class="context-item" id="contextInspect">
+        <span class="c-icon">🔍</span> Inspect District Dossier
+      </button>
+      <button class="context-item" id="contextAudit">
+        <span class="c-icon">📋</span> Schedule DAO Field Audit
+      </button>
+      <button class="context-item" id="contextTransfer">
+        <span class="c-icon">🔄</span> Initiate Buffer Transfer
+      </button>
+      <button class="context-item" id="contextDirective">
+        <span class="c-icon">📢</span> Issue District Advisory
+      </button>
+    </div>
+
+    <!-- OFFICIAL ADVISORY BROADCAST MODAL -->
+    <div id="advisoryModal" class="modal-overlay" aria-hidden="true">
+      <div class="modal-box" style="border-color: rgba(245, 158, 11, 0.4); max-width: 680px;">
+        <div class="modal-header">
+          <h3 class="modal-title" style="color: #fbbf24;">
+            <span>📢</span> Broadcast Official Agricultural Planning Directive
+          </h3>
+          <button id="btnCloseAdvisoryModal" class="btn-close-modal">&times;</button>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          Issue food security guidelines, buffer transfers, or price stabilization directives to District Agricultural Officers (DAOs), Gram Panchayats, and FPOs.
+        </p>
+
+        <form id="directiveForm">
+          <div class="form-group">
+            <label class="wh-label" for="dirTitle">Directive Title / विषय *</label>
+            <input 
+              type="text" 
+              id="dirTitle" 
+              class="wh-input" 
+              placeholder="e.g. Onion Buffer Transfer from Nashik to Solapur & Konkan" 
+              required
+            >
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="wh-label" for="dirDivision">Target Division / विभाग *</label>
+              <select id="dirDivision" class="wh-select">
+                <option value="Statewide All Divisions">Statewide All 36 Districts</option>
+                <option value="Nashik & Ahmednagar Division">Nashik & Ahmednagar Division</option>
+                <option value="Pune & Western Maharashtra">Pune & Western Maharashtra</option>
+                <option value="Solapur & Marathwada Division">Solapur & Marathwada Division</option>
+                <option value="Vidarbha & Nagpur Division">Vidarbha & Nagpur Division</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="wh-label" for="dirPriority">Priority Level *</label>
+              <select id="dirPriority" class="wh-select">
+                <option value="HIGH">HIGH (Immediate Buffer Action)</option>
+                <option value="MEDIUM" selected>MEDIUM (Standard Advisory)</option>
+                <option value="LOW">LOW (Informational Brief)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="wh-label" for="dirMessage">Directive Instructions & Allocation Quotas *</label>
+            <textarea 
+              id="dirMessage" 
+              class="wh-input" 
+              rows="4" 
+              style="height: 100px; padding: 10px 14px; resize: vertical;" 
+              placeholder="Detail the recommended stock movements, godown storage incentives, or APMC market interventions..."
+              required
+            ></textarea>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.75rem;">
+            <button type="button" class="btn-wh-secondary" id="btnCancelDirective">Cancel</button>
+            <button type="submit" class="btn-gov-primary" style="height: 46px; padding: 0 1.75rem;">
+              <span>📡</span> Broadcast Directive
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- STRATEGIC BUFFER RE-ALLOCATION MODAL (Step 9 Interactive Re-balancing) -->
+    <div id="reallocateModal" class="modal-overlay" aria-hidden="true">
+      <div class="modal-box" style="border-color: rgba(16, 185, 129, 0.4); max-width: 680px;">
+        <div class="modal-header">
+          <h3 class="modal-title" style="color: #34d399;">
+            <span>🔄</span> Strategic Buffer Stock Re-Allocation
+          </h3>
+          <button id="btnCloseReallocateModal" class="btn-close-modal">&times;</button>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          Mobilize state buffer reserves from surplus warehouse clusters to deficit regions to stabilize market supplies and prevent acute local shortages.
+        </p>
+
+        <form id="reallocateForm">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="wh-label" for="reallocFrom">Source District (Surplus Reserve) *</label>
+              <select id="reallocFrom" class="wh-select">
+                <option value="Nashik">Nashik (78,500 MT Surplus)</option>
+                <option value="Latur">Latur (38,400 MT Sufficient)</option>
+                <option value="Ahmednagar">Ahmednagar (29,100 MT Balanced)</option>
+                <option value="Nagpur">Nagpur (25,100 MT Stable)</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="wh-label" for="reallocTo">Target Deficit District *</label>
+              <select id="reallocTo" class="wh-select">
+                <option value="Solapur">Solapur (13,150 MT - Shortage Alert)</option>
+                <option value="Pune">Pune (34,200 MT - Moderate Tight)</option>
+                <option value="Kolhapur">Kolhapur (14,800 MT - Low Buffer)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="wh-label" for="reallocCommodity">Commodity / Produce *</label>
+              <select id="reallocCommodity" class="wh-select">
+                <option value="Tur / Arhar Dal (तूर डाळ)">Tur / Arhar Dal (तूर डाळ)</option>
+                <option value="Nashik Red Onion (नाशिक लाल कांदा)">Nashik Red Onion (नाशिक लाल कांदा)</option>
+                <option value="Yellow Soybean (पिवळी सोयाबीन)">Yellow Soybean (पिवळी सोयाबीन)</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="wh-label" for="reallocQty">Allocation Quantity (MT) *</label>
+              <input 
+                type="number" 
+                id="reallocQty" 
+                class="wh-input" 
+                value="2500" 
+                min="100" 
+                max="20000" 
+                required
+              >
+            </div>
+          </div>
+
+          <div class="realloc-note-box">
+            <span>ℹ️ <strong>State Logistics Support:</strong> Dispatches under this order receive priority transit clearances and green freight corridor toll exemptions.</span>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.75rem;">
+            <button type="button" class="btn-wh-secondary" id="btnCancelReallocate">Cancel</button>
+            <button type="submit" class="btn-gov-primary" style="height: 46px; padding: 0 1.75rem; background: linear-gradient(135deg, #059669 0%, #10b981 50%, #f59e0b 100%);">
+              <span>🚀</span> Dispatch Buffer Stock
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- DISTRICT DETAIL DOSSIER MODAL (Interactive Inspection Drawer) -->
+    <div id="districtDetailModal" class="modal-overlay" aria-hidden="true">
+      <div class="modal-box" style="border-color: rgba(245, 158, 11, 0.4); max-width: 640px;">
+        <div class="modal-header">
+          <div style="display:flex; align-items:center; gap:0.6rem;">
+            <span style="font-size:1.5rem;">📍</span>
+            <div>
+              <h3 class="modal-title" id="dossierDistrictTitle" style="color:#fbbf24;">Nashik District Dossier</h3>
+              <span id="dossierDivisionBadge" class="gov-badge-seal">Nashik Division</span>
+            </div>
+          </div>
+          <button id="btnCloseDistrictModal" class="btn-close-modal">&times;</button>
+        </div>
+
+        <div class="dossier-grid">
+          <div class="dossier-item">
+            <span class="d-lbl">Stored Volume</span>
+            <span class="d-val text-saffron" id="dossierStock">78,500 MT</span>
+          </div>
+          <div class="dossier-item">
+            <span class="d-lbl">Active Godowns</span>
+            <span class="d-val" id="dossierGodowns">38 Godowns</span>
+          </div>
+          <div class="dossier-item">
+            <span class="d-lbl">Cold Storage Vaults</span>
+            <span class="d-val text-green" id="dossierColdVaults">24 Facilities</span>
+          </div>
+          <div class="dossier-item">
+            <span class="d-lbl">Standard Dry Godowns</span>
+            <span class="d-val" id="dossierDryGodowns">14 Godowns</span>
+          </div>
+        </div>
+
+        <div class="dossier-detail-card">
+          <h4 style="font-size:0.9rem; color:#fff; margin-bottom:0.4rem;">Leading Commodity & Dynamics</h4>
+          <p id="dossierLeadCrop" style="font-size:0.85rem; color:var(--text-secondary); line-height:1.5;">
+            Nashik Red Onion (नाशिक लाल कांदा) • High Inward Flow (+14.2% weekly surplus).
+          </p>
+        </div>
+
+        <div class="dossier-detail-card">
+          <h4 style="font-size:0.9rem; color:#fff; margin-bottom:0.4rem;">Assigned District Agricultural Officer (DAO)</h4>
+          <div style="display:flex; align-items:center; justify-content:space-between; font-size:0.85rem;">
+            <div>
+              <strong id="dossierDaoOfficer" style="color:#f1f5f9; display:block;">Smt. Sunita Patil</strong>
+              <span style="color:var(--text-muted); font-size:0.75rem;">Govt of Maharashtra • District HQ</span>
+            </div>
+            <a id="dossierDaoPhone" href="tel:+912532578912" style="color:#34d399; font-weight:700; text-decoration:none;">
+              📞 <span id="dossierDaoPhoneText">+91 253-2578912</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:1.5rem;">
+          <button type="button" class="btn-wh-secondary" id="btnCloseDossierBottom">Close</button>
+          <button type="button" class="btn-gov-primary" id="btnDispatchAuditFromDossier" style="height:44px; padding:0 1.25rem;">
+            <span>📋</span> Schedule DAO Audit
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Official Corporate Footer -->
+    <footer class="app-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-seal">🌾</span>
+          <div>
+            <p class="footer-copy">© 2026 Government of Maharashtra • Department of Agriculture & APMC Directorate</p>
+            <p class="footer-sub">Maha Inventory Statewide Agricultural Intelligence & Predictive Planning Network.</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <span>🔒 GovNet Tier-4 Protected</span>
+          <span>•</span>
+          <span>36 Districts Integrated</span>
+          <span>•</span>
+          <span>Confidential State Intelligence</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="government.js?v=10"></script>
+</body>
+</html>

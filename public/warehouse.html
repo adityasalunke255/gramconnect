@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warehouse Operator Portal | Maha Inventory</title>
+  <meta name="description" content="Dedicated stock movement entry and godown inventory ledger for Maharashtra wholesale buyers and cold storages.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="warehouse.css">
+</head>
+<body>
+  <!-- Ambient background glow mesh -->
+  <div class="ambient-mesh" aria-hidden="true">
+    <div class="ambient-orb orb-1" style="background: radial-gradient(circle, #059669 0%, transparent 70%);"></div>
+    <div class="ambient-orb orb-2" style="background: radial-gradient(circle, #0284c7 0%, transparent 70%);"></div>
+  </div>
+  <div class="tech-grid" aria-hidden="true"></div>
+
+  <div class="app-wrapper">
+    <!-- Warehouse Executive Navigation Header -->
+    <header class="wh-header">
+      <div class="wh-header-left">
+        <a href="index.html" class="btn-back-gateway" title="Return to Maha Inventory Gateway">
+          <span>←</span> Gateway
+        </a>
+        <a href="government.html" class="btn-back-gateway" style="border-color: rgba(245,158,11,0.3); color:#fcd34d;" title="Switch to State Government Intelligence Portal">
+          <span>🏛️</span> Govt Portal
+        </a>
+        <div class="wh-terminal-info">
+          <div class="wh-title-row">
+            <span class="wh-badge-code">WH-MH-NSK-101</span>
+            <h1 class="wh-main-title">Sahyadri Agro Cold Storage & Wholesale Godown</h1>
+            <span class="wh-status-live">● Online Terminal</span>
+          </div>
+          <p class="wh-sub-location">Pimpalgaon Baswant, Lasalgaon Road, Niphad, Nashik • Maharashtra</p>
+        </div>
+      </div>
+
+      <div class="wh-header-right">
+        <!-- Environmental Sensors Telemetry -->
+        <div class="wh-telemetry-chip">
+          <span class="tele-icon">❄️</span>
+          <div>
+            <span class="tele-val" id="teleTemp">2.1°C</span>
+            <span class="tele-lbl">Cold Storage Temp</span>
+          </div>
+        </div>
+
+        <div class="wh-telemetry-chip">
+          <span class="tele-icon">💧</span>
+          <div>
+            <span class="tele-val" id="teleHumidity">68%</span>
+            <span class="tele-lbl">Humidity</span>
+          </div>
+        </div>
+
+        <!-- Operator Profile -->
+        <div class="wh-operator-card">
+          <div class="operator-avatar">SP</div>
+          <div class="operator-meta">
+            <span class="operator-name">Sunil Rao Patil</span>
+            <span class="operator-role">Chief Godown Manager</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="wh-main">
+      <!-- TOP ROW: Facility Photographic Showcase & Live Storage Capacity Meter -->
+      <section class="facility-overview-grid">
+        <!-- Left: Warehouse Facility Visual Gallery Showcase -->
+        <div class="facility-showcase-card">
+          <div class="gallery-hero-wrapper">
+            <img 
+              id="mainFacilityImg" 
+              src="images/warehouse_facility.jpg" 
+              alt="MahaGrow Agri-Logistics Cold Storage and Grain Warehouse in Maharashtra" 
+              class="facility-active-img"
+            >
+            <div class="gallery-caption-overlay">
+              <span class="gallery-badge" id="galleryBadge">OPERATIONAL FACILITY</span>
+              <h3 id="galleryTitle">Pimpalgaon Lasalgaon Central Godown #1</h3>
+              <p id="galleryDesc">Multi-commodity solar-powered cold storage & grain terminal with 4 active intake bays.</p>
+            </div>
+          </div>
+
+          <!-- Thumbnail Strip -->
+          <div class="facility-thumbs">
+            <button class="thumb-btn active" data-img="images/warehouse_facility.jpg" data-badge="OPERATIONAL FACILITY" data-title="Pimpalgaon Lasalgaon Central Godown #1" data-desc="Multi-commodity solar-powered cold storage & grain terminal with 4 active intake bays.">
+              <img src="images/warehouse_facility.jpg" alt="Warehouse Exterior">
+              <span>Exterior & Solar Bays</span>
+            </button>
+            <button class="thumb-btn" data-img="images/produce_intake.jpg" data-badge="INTAKE BAY 4" data-title="Digital Produce Weighbridge & Intake Platform" data-desc="Real-time intake desk with electronic weighbridges for incoming farmer trucks and crates.">
+              <img src="images/produce_intake.jpg" alt="Produce Intake Dock">
+              <span>Intake Dock & Weighbridge</span>
+            </button>
+            <button class="thumb-btn" data-img="images/cold_storage_racks.jpg" data-badge="ZONES A & B" data-title="High-Density Pallet Racks & Humidity Zones" data-desc="Automated climate-controlled inventory vaults maintained at 2.1°C for onion and soybean preservation.">
+              <img src="images/cold_storage_racks.jpg" alt="Cold Storage Racks">
+              <span>Controlled Vault Racks</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Storage Capacity Meter & Quick Metrics -->
+        <div class="capacity-meter-card">
+          <div class="meter-card-header">
+            <div>
+              <span class="meter-eyebrow">GODOWN STORAGE UTILIZATION</span>
+              <h3 class="meter-title">Capacity & Stock Balance</h3>
+            </div>
+            <span class="utilization-badge" id="utilizationPctBadge">70.4% Full</span>
+          </div>
+
+          <!-- Large Utilization Gauge Bar -->
+          <div class="gauge-container">
+            <div class="gauge-bar-track">
+              <div class="gauge-bar-fill" id="gaugeFill" style="width: 70.4%;"></div>
+            </div>
+            <div class="gauge-labels">
+              <span>0 MT (Empty)</span>
+              <span id="gaugeCenterLabel">845.0 MT Stored</span>
+              <span>1,200 MT (Max)</span>
+            </div>
+          </div>
+
+          <!-- Metrics 2x2 Grid -->
+          <div class="capacity-stats-grid">
+            <div class="cap-stat-box">
+              <span class="stat-lbl">📦 Total Usable Stock</span>
+              <span class="stat-val text-green" id="dispTotalStock">845.0 <small>MT</small></span>
+              <span class="stat-sub" id="dispTotalQuintals">8,450 Quintals</span>
+            </div>
+            <div class="cap-stat-box">
+              <span class="stat-lbl">🟢 Free Space Available</span>
+              <span class="stat-val text-sky" id="dispFreeSpace">355.0 <small>MT</small></span>
+              <span class="stat-sub">Ready for intake</span>
+            </div>
+            <div class="cap-stat-box">
+              <span class="stat-lbl">⚡ Today's Inward (Farmer)</span>
+              <span class="stat-val text-green">+42.5 <small>MT</small></span>
+              <span class="stat-sub">14 Consignments</span>
+            </div>
+            <div class="cap-stat-box">
+              <span class="stat-lbl">🚚 Today's Outward</span>
+              <span class="stat-val text-amber">-18.2 <small>MT</small></span>
+              <span class="stat-sub">Vashi & Pune APMC</span>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="meter-quick-actions">
+            <a href="#stockEntrySection" class="btn-action-primary">
+              <span>➕</span> Add New Stock Entry
+            </a>
+            <button type="button" class="btn-action-secondary" id="btnPrintDailyReport">
+              <span>📄</span> Print Daily Ledger
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- STOCK ENTRY CENTER (The Main Form to Add Stock) -->
+      <section class="stock-entry-section" id="stockEntrySection">
+        <div class="section-header-row">
+          <div>
+            <div class="section-tag">STOCK MOVEMENT RECORDING DESK</div>
+            <h2 class="section-title">Record Stock Movement / माल नोंदणी केंद्र</h2>
+            <p class="section-subtitle">
+              Standardized inventory tracking under Maharashtra Agricultural Inventory guidelines. 
+              Quantities are automatically converted to uniform kilograms.
+            </p>
+          </div>
+
+          <!-- Movement Mode Tabs -->
+          <div class="movement-type-tabs" role="tablist">
+            <button type="button" class="m-tab-btn active" data-type="purchase_inward">
+              <span>🌾</span>
+              <div>
+                <strong>Farmer Purchase (Inward)</strong>
+                <small>शेतकरी खरेदी आवक</small>
+              </div>
+            </button>
+            <button type="button" class="m-tab-btn" data-type="sale_dispatch">
+              <span>🚚</span>
+              <div>
+                <strong>Sale / Dispatch (Outward)</strong>
+                <small>जावक / विक्री</small>
+              </div>
+            </button>
+            <button type="button" class="m-tab-btn" data-type="transfer_out">
+              <span>⇄</span>
+              <div>
+                <strong>Godown Transfer</strong>
+                <small>गोदाम ट्रान्सफर</small>
+              </div>
+            </button>
+            <button type="button" class="m-tab-btn" data-type="spoilage_damage">
+              <span>⚠️</span>
+              <div>
+                <strong>Spoilage / Damage</strong>
+                <small>खराब / घट नोंद</small>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- The Interactive Entry Form -->
+        <div class="entry-form-card">
+          <form id="stockEntryForm">
+            <input type="hidden" id="entryMovementType" value="purchase_inward">
+
+            <!-- Active Movement Banner -->
+            <div class="entry-mode-banner inward-mode" id="entryModeBanner">
+              <span class="mode-icon" id="modeIcon">🌾</span>
+              <div class="mode-text">
+                <h4 id="modeTitle">Farmer Purchase Inward (शेतकरी आवक नोंद)</h4>
+                <p id="modeDesc">Record incoming agricultural produce from farmers. Produce will be standardized and added to usable godown balance.</p>
+              </div>
+              <div class="farmer-notice-badge">
+                <span>✓ Farmers do NOT need an account on Maha Inventory</span>
+              </div>
+            </div>
+
+            <!-- Grid of Inputs -->
+            <div class="form-inputs-grid">
+              <!-- Produce Selection -->
+              <div class="form-col">
+                <label class="wh-label" for="entryCommodity">Agricultural Commodity / शेतमाल *</label>
+                <div class="select-wrapper">
+                  <select id="entryCommodity" class="wh-select" required>
+                    <option value="ONION_RED" selected>Nashik Red Onion (नाशिक लाल कांदा)</option>
+                    <option value="SOYBEAN_YELLOW">Yellow Soybean (पिवळी सोयाबीन)</option>
+                    <option value="TOMATO_HYBRID">Tomato Hybrid (टोमॅटो हायब्रिड)</option>
+                    <option value="TUR_DAL">Tur / Arhar Dal (तूर डाळ)</option>
+                    <option value="COTTON_BT">Cotton Medium Staple (कापूस)</option>
+                    <option value="GRAPES_THOMPSON">Grapes Thompson (द्राक्षे)</option>
+                    <option value="POMEGRANATE_BHAGWA">Pomegranate Bhagwa (डाळिंब)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Quantity & Unit with Live Standard Converter -->
+              <div class="form-col">
+                <label class="wh-label" for="entryQuantity">Received Quantity / वजन *</label>
+                <div class="quantity-input-group">
+                  <input 
+                    type="number" 
+                    id="entryQuantity" 
+                    class="wh-input" 
+                    placeholder="e.g. 150" 
+                    min="0.1" 
+                    step="0.01" 
+                    required
+                  >
+                  <select id="entryUnit" class="wh-unit-select">
+                    <option value="quintal" selected>Quintals (क्विंटल)</option>
+                    <option value="tonne">Tonnes (टन)</option>
+                    <option value="kg">Kilograms (किलो)</option>
+                  </select>
+                </div>
+
+                <!-- Live Unit Conversion Pill -->
+                <div class="live-conversion-pill" id="liveConversionPill">
+                  <span>Standard Internal Weight:</span>
+                  <strong id="convertedKgDisplay">0 kg (0.00 MT)</strong>
+                </div>
+              </div>
+
+              <!-- Farmer / Customer Name (Optional) -->
+              <div class="form-col">
+                <label class="wh-label" for="entryFarmerName" id="lblPartyName">
+                  Farmer Name & Village (शेतकऱ्याचे नाव / गाव)
+                  <span class="label-optional">(Optional)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="entryFarmerName" 
+                  class="wh-input" 
+                  placeholder="e.g. Ramesh Patil (Sinnar, Nashik)"
+                >
+              </div>
+
+              <!-- Challan / Receipt Number -->
+              <div class="form-col">
+                <label class="wh-label" for="entryRefNo">Receipt Slip / Gate Pass No. (पावती क्र.)</label>
+                <input 
+                  type="text" 
+                  id="entryRefNo" 
+                  class="wh-input" 
+                  placeholder="Auto-generated if empty (e.g. RCPT-MH-9483)"
+                >
+              </div>
+
+              <!-- Quality / Notes / Reason -->
+              <div class="form-col full-span">
+                <label class="wh-label" for="entryNotes" id="lblNotes">
+                  Quality Grade / Moisture / Notes (प्रतवारी व शेरा)
+                  <span class="label-optional">(Optional)</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="entryNotes" 
+                  class="wh-input" 
+                  placeholder="e.g. Grade A export quality, moisture &lt; 11%, batch stored in Bay 4 Cold Vault"
+                >
+              </div>
+            </div>
+
+            <!-- Form Action Footer -->
+            <div class="form-footer-actions">
+              <div class="entry-feedback-toast" id="entryFeedbackToast"></div>
+
+              <div class="action-btns-row">
+                <button type="reset" class="btn-wh-secondary" id="btnResetEntry">
+                  Clear Form
+                </button>
+                <button type="submit" class="btn-wh-primary" id="btnSubmitEntry">
+                  <span id="btnEntryIcon">💾</span>
+                  <span id="btnEntryLabel">Record Stock Inward into Godown Ledger</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- CURRENT COMMODITY INVENTORY BALANCES -->
+      <section class="commodity-balances-section">
+        <div class="section-header-row">
+          <div>
+            <div class="section-tag">VAULT SUMMARY</div>
+            <h2 class="section-title">Stored Commodities & Usable Inventory</h2>
+          </div>
+          <span class="last-synced-chip" id="lastSyncedChip">🟢 Ledger Synced Just Now</span>
+        </div>
+
+        <div class="commodity-cards-grid" id="commodityCardsGrid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- CHRONOLOGICAL STOCK MOVEMENTS LEDGER TABLE -->
+      <section class="ledger-table-section">
+        <div class="table-card">
+          <div class="table-header-toolbar">
+            <div>
+              <h3 class="table-title">Chronological Stock Movement History</h3>
+              <p class="table-subtitle">Audit trail of purchases, dispatches, transfers, and spoilage entries.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="table-filters">
+              <div class="filter-pills">
+                <button class="tbl-filter-pill active" data-filter="all">All Movements</button>
+                <button class="tbl-filter-pill" data-filter="purchase_inward">Inward</button>
+                <button class="tbl-filter-pill" data-filter="sale_dispatch">Dispatches</button>
+                <button class="tbl-filter-pill" data-filter="transfer_out">Transfers</button>
+                <button class="tbl-filter-pill" data-filter="spoilage_damage">Spoilage</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table -->
+          <div class="table-responsive">
+            <table class="wh-data-table" id="whMovementsTable">
+              <thead>
+                <tr>
+                  <th>Movement ID</th>
+                  <th>Timestamp</th>
+                  <th>Commodity</th>
+                  <th>Movement Type</th>
+                  <th>Reported Quantity</th>
+                  <th>Standard (KG)</th>
+                  <th>Farmer / Destination Ref</th>
+                  <th>Slip / Gate Pass</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="movementsTableBody">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="wh-footer">
+      <div class="wh-footer-inner">
+        <p>© 2026 Maha Inventory • Warehouse Operator Terminal WH-MH-NSK-101</p>
+        <p>Maharashtra Agricultural Inventory Intelligence System • Dept of Agriculture</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="warehouse.js"></script>
+</body>
+</html>

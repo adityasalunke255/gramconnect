@@ -1,0 +1,17 @@
+{
+  "name": "maha-inventory",
+  "version": "1.0.0",
+  "description": "Maha Inventory - Digital Agricultural Inventory Intelligence System for Maharashtra",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}
